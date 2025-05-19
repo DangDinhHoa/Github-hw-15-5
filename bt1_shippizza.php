@@ -100,8 +100,8 @@
             $ho_ten = $_POST['ho_ten'];
             $email = $_POST['email'];
             $sdt = $_POST['sdt'];
-            $thoi_gian_muon = floatval($_POST['thoi_gian_muon']);
-            $so_luong_pizza = intval($_POST['so_luong_pizza']);
+            $thoi_gian_muon = $_POST['thoi_gian_muon'];
+            $so_luong_pizza = $_POST['so_luong_pizza'];
 
             $gia_ship_moi_pizza = 5.50; 
             if ($thoi_gian_muon >= 10 && $thoi_gian_muon < 20) {
