@@ -71,7 +71,6 @@
     <div class="container">
         <h1>Tính Chi Phí Ship Pizza</h1>
 
-        <!-- Form nhập thông tin -->
         <form method="POST" action="">
             <div class="form-group">
                 <label for="ho_ten">Họ và tên:</label>
@@ -96,30 +95,25 @@
             <button type="submit" name="tinh_toan">Tính toán</button>
         </form>
 
-        <!-- Xử lý và hiển thị kết quả -->
         <?php
         if (isset($_POST['tinh_toan'])) {
-            // Lấy dữ liệu từ form
             $ho_ten = $_POST['ho_ten'];
             $email = $_POST['email'];
             $sdt = $_POST['sdt'];
             $thoi_gian_muon = floatval($_POST['thoi_gian_muon']);
             $so_luong_pizza = intval($_POST['so_luong_pizza']);
 
-            // Tính chi phí ship mỗi chiếc pizza dựa trên thời gian muộn
-            $gia_ship_moi_pizza = 5.50; // Giá gốc: $5.50/chiếc
+            $gia_ship_moi_pizza = 5.50; 
             if ($thoi_gian_muon >= 10 && $thoi_gian_muon < 20) {
-                $gia_ship_moi_pizza = 4.00; // Giảm còn $4.00
+                $gia_ship_moi_pizza = 4.00; 
             } elseif ($thoi_gian_muon >= 20 && $thoi_gian_muon < 30) {
-                $gia_ship_moi_pizza = 2.50; // Giảm còn $2.50
+                $gia_ship_moi_pizza = 2.50; 
             } elseif ($thoi_gian_muon >= 30) {
-                $gia_ship_moi_pizza = 0.00; // Miễn phí
+                $gia_ship_moi_pizza = 0.00; 
             }
 
-            // Tính tổng chi phí ship
             $tong_chi_phi_ship = $so_luong_pizza * $gia_ship_moi_pizza;
 
-            // Hiển thị kết quả
             echo "<div class='result'>";
             echo "<p><strong>Thông tin người mua:</strong></p>";
             echo "<p>Họ và tên: $ho_ten</p>";
